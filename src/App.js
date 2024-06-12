@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import AddTasks from "./components/AddTasks";
+import TaskCount from "./components/TaskCount";
+import TaskList from "./components/TaskList";
+//import {TaskContext} from './contexts/TaskContext'
 function App() {
+  //let [tasks,setTasks]= useContext(TaskContext)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="text-center  display-1 text-primary bg-dark p-3">
+        To-Do App
+      </h1>
+      <div className="row">
+        <div className="col-sm-4 border p-5 bg-light ">
+          <AddTasks />
+        </div>
+        <div className="col-sm-4 border p-5 bg-light">
+          <TaskCount />
+        </div>
+        <div className="col-sm-4 border p-5 bg-light">
+          <TaskList />
+        </div>
+      </div>
     </div>
   );
 }
